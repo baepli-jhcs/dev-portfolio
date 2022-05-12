@@ -4,10 +4,7 @@ import Contact from "./Contact";
 import Projects from "./Projects";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 import InitialTransition from "./InitialTransition";
-import { initialLoadActions } from "./store/slices/initialLoadSlice";
 import useInitialLoad from "./hooks/useInitialLoad";
 import useLoad from "./hooks/useLoad";
 import LoadingTransition from "./LoadingTransition";
@@ -18,13 +15,6 @@ export default function PageRoutes() {
   const initialLoad = useInitialLoad();
 
   const location = useLocation();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    setTimeout(async () => {
-      dispatch(initialLoadActions.stopLoading());
-    }, 300);
-  }, [dispatch]);
 
   const assets = useAssets(location.pathname);
 
