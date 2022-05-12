@@ -14,7 +14,7 @@ export default function Logout() {
   };
   useEffect(() => {
     handleLogout();
-  }, []);
+  }, [handleLogout]);
   if (loggedOut) {
     return <Navigate to={"/"} />;
   }

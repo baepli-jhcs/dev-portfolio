@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FaGithub } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
 import { fetchProjects } from "../store/slices/projectsSlice";
