@@ -1,0 +1,79 @@
+.container {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.title {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-title {
+  font-family: League Spartan, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  overflow-x: hidden;
+  font-size: clamp(2.8rem, 10vw, 5rem);
+  padding: 0px;
+  margin: 0px;
+}
+.subtitle {
+  font-style: italic;
+  font-weight: 200;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+}
+
+.about-button {
+  padding: 0.7em 1em;
+  text-decoration: none;
+  color: inherit;
+  background: #1d486f;
+  background: -webkit-linear-gradient(top left, #1d486f, #368775);
+  background: -moz-linear-gradient(top left, #1d486f, #368775);
+  background: linear-gradient(to bottom right, #1d486f, #368775);
+  box-shadow: 0px 0px 5px teal;
+  margin-top: 0.5rem;
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.about-icon {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: 0.5em;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -10;
+}
+
+.image {
+  filter: brightness(0.2);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

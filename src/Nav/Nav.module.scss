@@ -1,0 +1,104 @@
+$font-color: hsl(180, 50%, 90%);
+$accent-color: hsl(236, 71%, 80%);
+$background-color: hsl(0, 0%, 0%);
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: $background-color;
+  color: $font-color;
+  z-index: 10;
+  padding: 0.2em 0 0.1em 0;
+  h1 {
+    font-size: 1.65rem;
+    z-index: 10;
+  }
+}
+
+.burger-menu {
+  color: white;
+  font-size: 2rem;
+  border: 0;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.5s all;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s all;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0.3em;
+  width: 100%;
+  border: 3px solid transparent;
+  font-size: 1.2rem;
+}
+.link:hover {
+  color: white;
+  border: 3px solid $accent-color;
+}
+.links {
+  display: flex;
+  gap: 1.7em;
+  font-size: 1.25rem;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  background-color: $background-color;
+  transition: 0.35s all;
+}
+
+.links.open {
+  transform: translateX(0%);
+}
+
+@media screen and (min-width: 900px) {
+  .burger-menu {
+    position: absolute;
+    transform: translateX(5000px);
+  }
+  .links {
+    position: relative;
+    height: auto;
+    width: auto;
+    transform: translateX(0%);
+    flex-direction: row;
+  }
+  .link {
+    color: hsl(0, 0%, 85%);
+    border: none;
+    border-bottom: 3px solid transparent;
+  }
+  .link:hover {
+    border: none;
+    border-bottom: 3px solid $accent-color;
+  }
+}
+
+.container {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    width: max(72%, 50em);
+  }
+}

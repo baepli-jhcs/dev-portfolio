@@ -1,0 +1,212 @@
+$form-background: hsl(248, 39%, 8%);
+$header-color: hsl(171, 98%, 51%);
+$background-color: hsl(236, 28%, 55%);
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $form-background;
+}
+
+.form-container {
+  display: grid;
+  padding: 5em 2em;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  background-color: $form-background;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+}
+
+.me {
+  display: none;
+}
+
+.header {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.3em;
+  border-bottom: 2px solid white;
+  font-size: 4rem;
+  font-weight: 900;
+  color: $header-color;
+}
+
+.text {
+  padding: 0;
+  margin: 0;
+  font-weight: 100;
+  box-sizing: border-box;
+  padding-bottom: 0.7em;
+  margin-bottom: 1em;
+}
+
+.input {
+  padding: 0.9em 1.3em;
+  margin-bottom: 0.75em;
+  margin-right: 1em;
+  background-color: lighten($form-background, 10%);
+  box-shadow: 0 0 1em hsla(0, 0%, 0%, 0.5);
+  position: relative;
+}
+
+.form-container input {
+  width: 100%;
+  height: 100%;
+}
+
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+  color: hsla(0, 30%, 80%, 0.6);
+}
+.red-underline {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  height: 2px;
+}
+
+.form-container input + .red-underline::after,
+.form-container textarea + .red-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateX(-100%);
+  background-color: red;
+  transition: 0.5s transform;
+}
+
+.form-container input:focus + .red-underline::after,
+.form-container input:active + .red-underline::after,
+.form-container textarea:focus + .red-underline::after,
+.form-container textarea:active + .red-underline::after {
+  transform: translateX(0);
+}
+
+.form-container input:valid + .red-underline::after {
+  content: "";
+}
+
+.form-container textarea {
+  min-height: 160px;
+  width: 100%;
+}
+
+.submit {
+  margin-top: 0.5em;
+  padding: 0.5em 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  outline: 3px solid hsl(95, 47%, 59%);
+  color: hsl(95, 47%, 89%);
+  width: 60%;
+  overflow: hidden;
+  position: relative;
+  transition: 0.7s all;
+  z-index: 4;
+}
+
+.submit:hover,
+.submit:active {
+  color: white;
+}
+
+.submit::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  background-color: green;
+  transition: 0.7s all;
+}
+
+.submit:hover::before {
+  transform: translateX(0);
+}
+
+.submit::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  transform: translateX(100%);
+  background-color: green;
+  transition: 0.7s all;
+}
+
+.submit:hover::after {
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 400px) {
+  .me {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    background-color: $background-color;
+  }
+  .form-container {
+    padding: 5em;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 2em;
+    font-size: 1.15rem;
+    margin: 2em 0;
+  }
+  .header {
+    grid-column: 1/3;
+    font-size: 4.7rem;
+  }
+
+  .name {
+    grid-column: 1/2;
+  }
+
+  .email {
+    grid-column: 2/3;
+  }
+
+  .subject {
+    grid-column: 1/3;
+  }
+
+  .message {
+    grid-column: 1/3;
+  }
+
+  .text {
+    grid-column: 1/3;
+  }
+  .input {
+    font-size: 1.07rem;
+  }
+  .submit {
+    font-size: 1.2rem;
+    width: 70%;
+  }
+}
