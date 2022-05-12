@@ -11,7 +11,7 @@ export default function LoadingTransition() {
       exit="exit"
       className={LoadingCSS.container}
       variants={loadingVariants}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5 }}
     >
       <motion.div
         className={LoadingCSS.inner}

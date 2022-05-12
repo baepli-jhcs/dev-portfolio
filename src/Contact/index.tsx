@@ -57,7 +57,6 @@ export default function Contact() {
         animate="animate"
         exit="exit"
         variants={pageTransition}
-        transition={{ duration: 0.75 }}
       >
         <form
           onSubmit={(e) => handleSubmit(e)}

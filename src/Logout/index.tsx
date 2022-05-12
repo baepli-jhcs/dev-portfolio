@@ -7,14 +7,14 @@ import { authActions } from "../store/slices/authSlice";
 export default function Logout() {
   const dispatch = useDispatch();
   const [loggedOut, setLoggedOut] = useState(false);
-  const handleLogout = async () => {
-    dispatch(authActions.clear());
-    await persistor.purge();
-    setLoggedOut(true);
-  };
   useEffect(() => {
+    const handleLogout = async () => {
+      dispatch(authActions.clear());
+      await persistor.purge();
+      setLoggedOut(true);
+    };
     handleLogout();
-  }, [handleLogout]);
+  }, [dispatch]);
   if (loggedOut) {
     return <Navigate to={"/"} />;
   }

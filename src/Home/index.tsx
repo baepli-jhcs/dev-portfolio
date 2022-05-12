@@ -24,7 +24,6 @@ function Home(props: { images: any }) {
       exit="exit"
       variants={pageTransition}
       className={HomeCSS.container}
-      transition={{ duration: 0.75 }}
     >
       <div className={`content ${HomeCSS["title-container"]}`}>
         <div className={HomeCSS.title}>

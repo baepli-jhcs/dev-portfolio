@@ -31,7 +31,6 @@ export default function Projects() {
       animate="animate"
       exit="exit"
       variants={pageTransition}
-      transition={{ duration: 0.75 }}
     >
       <div className={ProjectsCSS.projects}>
         <h2 className={ProjectsCSS.header}>These are some of my projects:</h2>
