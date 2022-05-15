@@ -1,0 +1,19 @@
+.next {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 3em;
+  background-color: hsl(0, 40%, 70%);
+  padding: 1em;
+  border-radius: 50%;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  z-index: 10;
+  user-select: none;
+  transition: 0.3s background-color;
+}
+
+.next:hover,
+.next:focus {
+  background-color: hsl(0, 40%, 80%);
+}

@@ -9,6 +9,7 @@ import useInitialLoad from "./hooks/useInitialLoad";
 import useLoad from "./hooks/useLoad";
 import LoadingTransition from "./LoadingTransition";
 import useAssets from "./hooks/useAssets";
+import ResponsiveWebDesign from "./Projects/ResponsiveWebDesign";
 
 export default function PageRoutes() {
   const loading = useLoad();
@@ -27,6 +28,10 @@ export default function PageRoutes() {
             <Route path="/about" element={<About images={assets} />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<Projects />} />
+            <Route
+              path="/projects/rwd/:id/*"
+              element={<ResponsiveWebDesign />}
+            />
           </Routes>
         )}
       </AnimatePresence>

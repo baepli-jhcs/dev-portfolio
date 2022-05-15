@@ -25,10 +25,10 @@ export default function App() {
 function MostRoutes() {
   return (
     <>
+      <Nav />
       <div id="darken">
         <PageRoutes />
       </div>
-      <Nav />
     </>
   );
 }

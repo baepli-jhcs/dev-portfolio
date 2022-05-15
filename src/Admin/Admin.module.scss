@@ -1,0 +1,31 @@
+.container {
+  width: max(80%, 48em);
+  margin: 0 auto;
+}
+
+.projects-form {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  input {
+    padding: 0.5em;
+    border: 2px solid black;
+  }
+  button {
+    padding: 0.5em;
+    border: 2px solid black;
+  }
+  button:hover {
+    background: hsl(209, 59%, 67%);
+  }
+  button:active {
+    background: hsl(209, 59%, 57%);
+  }
+}
+
+.header {
+  font-size: 3rem;
+}
+
+.submit {
+}

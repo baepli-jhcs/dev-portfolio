@@ -14,7 +14,6 @@ import contactSlice from "./slices/contactSlice";
 import initialLoadSlice from "./slices/initialLoadSlice";
 import loadSlice from "./slices/loadSlice";
 import authSlice from "./slices/authSlice";
-import { submitProjectApi } from "./apis/submit-project";
 import { getProjectApi } from "./apis/get-project";
 
 const persistConfig = {
@@ -29,7 +28,6 @@ const reducers = combineReducers({
   auth: authSlice.reducer,
   contact: contactSlice.reducer,
   [getProjectApi.reducerPath]: getProjectApi.reducer,
-  [submitProjectApi.reducerPath]: submitProjectApi.reducer,
   [validateApi.reducerPath]: validateApi.reducer,
 });
 
@@ -42,11 +40,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(
-      getProjectApi.middleware,
-      submitProjectApi.middleware,
-      validateApi.middleware
-    ),
+    }).concat(getProjectApi.middleware, validateApi.middleware),
 });
 
 export default store;

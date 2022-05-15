@@ -1,8 +1,9 @@
-import { FormEvent, FormEventHandler, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import { useGetProjectQuery } from "../store/apis/get-project";
-import { useSubmitProjectQuery } from "../store/apis/submit-project";
+import AdminCSS from "./Admin.module.scss";
+import { FaTrash } from "react-icons/fa";
 
 export default function Admin() {
   const { data, error } = useGetProjectQuery(undefined);
@@ -12,7 +13,6 @@ export default function Admin() {
   const [git, setGit] = useState("");
   const [demo, setDemo] = useState("");
   const [labels, setLabels] = useState("");
-  const [shouldSubmit, setShouldSubmit] = useState(false);
   let projects: JSX.Element[];
   if (data) {
     projects = data.map((project: any) => {
@@ -20,6 +20,7 @@ export default function Admin() {
         <li key={project.name}>
           <h1>{project.name}</h1>
           <p>{project.description}</p>
+          <FaTrash onClick={(e) => void handleDelete(e, project.name)} />
         </li>
       );
     });
@@ -27,7 +28,20 @@ export default function Admin() {
     projects = [<li key="loading">Loading...</li>];
   }
 
-  console.log(data);
+  const handleDelete = async (
+    e: React.MouseEvent<SVGElement>,
+    name: string
+  ): Promise<void> => {
+    e.preventDefault();
+    await fetch(`${process.env.REACT_APP_API_URL}/projects`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, token }),
+    });
+    window.location.reload();
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -35,6 +49,7 @@ export default function Admin() {
   ) => {
     setter(e.target.value);
   };
+  const token = useSelector((state: RootState) => state.auth.response.token);
 
   const inputProject = {
     name,
@@ -43,21 +58,37 @@ export default function Admin() {
     git,
     demo,
     labels: labels.split(","),
+    token,
   };
-  const token = useSelector((state: RootState) => state.auth.response.token);
-  const submitProject = { project: inputProject, token };
 
-  console.log(useSubmitProjectQuery(submitProject, { skip: !shouldSubmit }));
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
-    setShouldSubmit(true);
+    // fetch POST request
+    let response;
+    try {
+      response = await fetch("/api/projects", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputProject),
+      });
+    } catch (err) {
+      return console.log(err);
+    }
+    const data = await response.json();
+    console.log(data);
   };
   return (
-    <>
-      <div>Admin</div>
+    <div className={AdminCSS.container}>
+      <h1 className={AdminCSS.header}>Admin</h1>
       <ul>{projects}</ul>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(e) => void handleSubmit(e)}
+        className={AdminCSS["projects-form"]}
+      >
         <input
           type="text"
           placeholder="name"
@@ -96,6 +127,6 @@ export default function Admin() {
         />
         <button type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 }

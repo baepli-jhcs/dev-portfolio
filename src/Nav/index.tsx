@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import useWindowDimensions from "../utilities/dimensions";
 import { loadActions } from "../store/slices/loadSlice";
 import useNavOpen from "./useNavOpen";
+import { fixedNavbars } from "../controllers/fixedNavbars";
 function Nav() {
   const [open, setOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -30,22 +31,25 @@ function Nav() {
   useNavOpen(open);
 
   useEffect(() => {
-    const handleScroll = debounce(() => {
-      const currentScrollPos = window.pageYOffset;
+    const handleScroll = () => {
+      if (fixedNavbars.get(location.pathname)) return;
+      debounce(() => {
+        const currentScrollPos = window.pageYOffset;
 
-      setVisible(
-        (prevScrollPos > currentScrollPos &&
-          prevScrollPos - currentScrollPos > 70) ||
-          currentScrollPos < 10
-      );
+        setVisible(
+          (prevScrollPos > currentScrollPos &&
+            prevScrollPos - currentScrollPos > 70) ||
+            currentScrollPos < 10
+        );
 
-      setPrevScrollPos(currentScrollPos);
-    }, 100);
+        setPrevScrollPos(currentScrollPos);
+      }, 100)();
+    };
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos, visible]);
+  }, [prevScrollPos, visible, location.pathname]);
 
   return (
     <>
