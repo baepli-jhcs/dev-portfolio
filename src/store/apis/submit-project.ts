@@ -8,14 +8,15 @@ export const submitProjectApi = createApi({
   }),
 
   endpoints: (builder) => ({
-    submitProject: builder.query<any, { project: Project; token: string }>({
+    submitProject: builder.query<Project, { project: Project; token: string }>({
       query: (input) => {
-        let project: any = input.project;
+        let project: any = Object.assign({}, input.project);
         project.token = input.token;
+        console.log("here");
         return {
           url: "/",
           method: "POST",
-          body: { project },
+          body: project,
         };
       },
     }),
