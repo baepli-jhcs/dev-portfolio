@@ -61,6 +61,7 @@ export default function Contact() {
         <form
           onSubmit={(e) => handleSubmit(e)}
           className={ContactCSS["form-container"]}
+          autoComplete="off"
         >
           <h1 className={ContactCSS.header}>
             Contact <div className={ContactCSS.me}>Me!</div>
@@ -76,6 +77,7 @@ export default function Contact() {
               value={name}
               name="name"
               onChange={(e) => setName(e.target.value)}
+              autoComplete="new-password"
               required
             />
             <div className={ContactCSS["red-underline"]} />
@@ -87,6 +89,7 @@ export default function Contact() {
               value={email}
               name="email"
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="new-password"
               required
             />
             <div className={ContactCSS["red-underline"]} />

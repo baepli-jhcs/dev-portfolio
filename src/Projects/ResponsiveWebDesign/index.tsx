@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import RwdCSS from "./ResponsiveWebDesign.module.scss";
 import SurveyPage from "./SurveyPage";
+import TechnicalDocumentationPage from "./TechnicalDocumentationPage";
 import TributePage from "./TributePage";
 export default function ResponsiveWebDesign() {
   const [navigate, setNavigate] = useState(false);
@@ -20,8 +21,9 @@ export default function ResponsiveWebDesign() {
       <div className={RwdCSS.next} onClick={() => setNavigate(true)}>
         Next Page
       </div>
-      {number === 0 && <SurveyPage />}
-      {number === 1 && <TributePage />}
+      {number === 0 && <TechnicalDocumentationPage />}
+      {number === 2 && <SurveyPage />}
+      {number === 3 && <TributePage />}
     </>
   );
 }

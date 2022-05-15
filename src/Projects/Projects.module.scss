@@ -18,7 +18,7 @@
 }
 
 .projects {
-  width: max(60%, 600px);
+  width: min(50em, 100%);
   margin: 0 auto;
   flex-grow: 1;
 }

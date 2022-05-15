@@ -121,7 +121,7 @@ export default function Admin() {
         />
         <input
           type="text"
-          placeholder="enter labels, separated by spaces"
+          placeholder="enter labels, separated by commas"
           onChange={(e) => handleChange(e, setLabels)}
           value={labels}
         />
