@@ -8,12 +8,13 @@ $background-color: hsl(236, 15%, 35%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: $form-background;
 }
 
 .form-container {
   display: grid;
-  padding: 7em 2em 0 2em;
+  padding: 5em 2em;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
@@ -169,7 +170,6 @@ $background-color: hsl(236, 15%, 35%);
 @media screen and (min-width: 768px) {
   .container {
     background-color: $background-color;
-    justify-content: center;
   }
   .form-container {
     padding: 5em;
