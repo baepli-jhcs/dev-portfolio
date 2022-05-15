@@ -20,7 +20,7 @@ const useAssets = (location: string) => {
       dispatch(loadActions.stopLoading());
       return;
     }
-    fetchAssets(required);
+    void fetchAssets(required);
   }, [location, dispatch]);
 
   return assets;

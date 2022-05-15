@@ -8,7 +8,9 @@
 :root {
   font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-synthesis: weight style;
+  font-synthesis: style weight;
+  font-style: normal;
+  font-weight: normal;
   text-rendering: optimizeLegibility;
 }
 

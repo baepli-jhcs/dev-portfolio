@@ -13,7 +13,7 @@ export default function Logout() {
       await persistor.purge();
       setLoggedOut(true);
     };
-    handleLogout();
+    void handleLogout();
   }, [dispatch]);
   if (loggedOut) {
     return <Navigate to={"/"} />;
