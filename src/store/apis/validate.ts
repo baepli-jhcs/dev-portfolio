@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const validateApi = createApi({
   reducerPath: "validate",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://localhost:8080/api/validate" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://api.bena.works/validate" }),
   endpoints: (builder) => ({
     validate: builder.query<any, string>({
       query: (token) => {

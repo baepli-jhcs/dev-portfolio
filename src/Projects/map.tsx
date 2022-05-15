@@ -1,4 +1,4 @@
-import { Project } from "./types";
+import Project from "../types/project";
 import ProjectsCSS from "./Projects.module.scss";
 
 export default function map(

@@ -14,7 +14,7 @@ import contactSlice from "./slices/contactSlice";
 import initialLoadSlice from "./slices/initialLoadSlice";
 import loadSlice from "./slices/loadSlice";
 import authSlice from "./slices/authSlice";
-import projectsSlice from "./slices/projectsSlice";
+import { submitProjectApi } from "./apis/submit-project";
 
 const persistConfig = {
   key: "root",
@@ -26,8 +26,8 @@ const reducers = combineReducers({
   load: loadSlice.reducer,
   initialLoad: initialLoadSlice.reducer,
   auth: authSlice.reducer,
-  projects: projectsSlice.reducer,
   contact: contactSlice.reducer,
+  [submitProjectApi.reducerPath]: submitProjectApi.reducer,
   [validateApi.reducerPath]: validateApi.reducer,
 });
 

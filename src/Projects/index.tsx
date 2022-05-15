@@ -1,29 +1,13 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import { fetchProjects } from "../store/slices/projectsSlice";
 import { pageTransition } from "../transitions";
-import map from "./map";
 import ProjectsCSS from "./Projects.module.scss";
 
 export default function Projects() {
-  const projectsResponse = useSelector((state: RootState) => state.projects);
-
   const [searchText, setSearchText] = useState("");
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchProjects());
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (projectsResponse.status === "error") {
-      dispatch(fetchProjects());
-    }
-  }, [dispatch, projectsResponse]);
-
-  let projects = map(projectsResponse.response);
   return (
     <motion.div
       className={ProjectsCSS.container}
@@ -46,7 +30,7 @@ export default function Projects() {
             />
           </div>
         </div>
-        <div className={ProjectsCSS.grid}>{projects}</div>
+        <div className={ProjectsCSS.grid}></div>
       </div>
       {/* <footer className={ProjectsCSS.footer}>
         <h2>Find me on...</h2>
