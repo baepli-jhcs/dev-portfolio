@@ -32,7 +32,8 @@ function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (fixedNavbars.get(location.pathname)) return;
+      if (fixedNavbars.get(location.pathname))
+        return !visible && setVisible(true);
       debounce(() => {
         const currentScrollPos = window.pageYOffset;
 
@@ -43,7 +44,7 @@ function Nav() {
         );
 
         setPrevScrollPos(currentScrollPos);
-      }, 100)();
+      }, 175)();
     };
 
     window.addEventListener("scroll", handleScroll);
