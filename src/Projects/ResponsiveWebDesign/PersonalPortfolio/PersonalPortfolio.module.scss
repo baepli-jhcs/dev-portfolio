@@ -1,0 +1,147 @@
+.container {
+  font-family: sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  display: inline-block;
+  background-color: hsl(0, 0%, 0%);
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  margin-right: 20px;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  background-color: hsl(134, 50%, 15%);
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, hsl(260, 100%, 85%), hsl(150, 100%, 85%));
+  h1 {
+    font-size: 100px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-weight: lighter;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.projects {
+  background: linear-gradient(62deg, hsl(210, 5%, 20%) 0%, hsl(270, 5%, 5%));
+  width: 100%;
+  padding-bottom: 100px;
+  color: hsl(0, 0%, 95%);
+}
+
+.projects-heading {
+  text-align: center;
+  padding: 90px 0px 70px 0px;
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+.projects-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-tile {
+  border: 2px solid hsl(240, 100%, 80%);
+  width: 350px;
+  height: 450px;
+  margin: 0 20px;
+  text-align: center;
+  text-decoration: none;
+  color: hsl(0, 0%, 95%);
+}
+
+.project-title {
+  font-size: 40px;
+  margin-top: 10px;
+  padding: 15px;
+  border-bottom: 2px solid;
+  border-color: hsl(240, 100%, 80%);
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+    sans-serif;
+}
+
+.project-image {
+  object-fit: cover;
+  width: 100%;
+  height: calc(100% - 102px);
+}
+
+.social {
+  background: hsl(240, 100%, 20%);
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+.profile-link {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: lighter;
+  font-family: "Poppins", sans-serif;
+}
+.social h2 {
+  font-size: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1000px) {
+  .project-tile {
+    margin: 5px;
+    width: 300px;
+  }
+  .welcome-section {
+    h1 {
+      font-size: 75px;
+    }
+  }
+
+  .projects-section {
+    margin: 0px 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .projects-section {
+    flex-direction: column;
+  }
+}

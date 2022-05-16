@@ -38,7 +38,7 @@ function Nav() {
 
         setVisible(
           (prevScrollPos > currentScrollPos &&
-            prevScrollPos - currentScrollPos > 70) ||
+            prevScrollPos - currentScrollPos > 0) ||
             currentScrollPos < 10
         );
 
