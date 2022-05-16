@@ -5,21 +5,21 @@ const assets: { [key: string]: [Asset] } = {
     {
       name: "background",
       type: "image",
-      path: "https://api.bena.works/images/laptop.jpg",
+      path: `${process.env.REACT_APP_API_URL}/images/laptop.jpg`,
     },
   ],
   "/about": [
     {
       name: "side",
       type: "image",
-      path: "https://api.bena.works/images/Moose.jpg",
+      path: `${process.env.REACT_APP_API_URL}/images/Moose.jpg`,
     },
   ],
   "/projects": [
     {
       name: "projects",
       type: "data",
-      path: "https://api.bena.works/projects",
+      path: `${process.env.REACT_APP_API_URL}/projects`,
     },
   ],
 };

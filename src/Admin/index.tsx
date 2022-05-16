@@ -1,7 +1,6 @@
 import AdminCSS from "./Admin.module.scss";
 import ProjectForm from "./ProjectForm";
 import ProjectsList from "./ProjectsList";
-import FileUploader from "./FileUploader";
 
 export default function Admin() {
   return (
@@ -9,7 +8,6 @@ export default function Admin() {
       <h1 className={AdminCSS.header}>Admin</h1>
       <ProjectsList />
       <ProjectForm />
-      <FileUploader />
     </div>
   );
 }

@@ -26,22 +26,3 @@
 .header {
   font-size: 3rem;
 }
-
-.file-form {
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.file-submit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-  outline: 2px solid black;
-  margin-top: 0.5rem;
-}
-
-.file-submit:hover {
-  background: hsl(209, 59%, 67%);
-}
