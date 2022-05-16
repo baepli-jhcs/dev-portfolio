@@ -13,6 +13,7 @@ export default function TributePage() {
             id="image"
             src="https://upload.wikimedia.org/wikipedia/commons/f/f6/C%C3%A9sar_Ch%C3%A1vez.jpg"
             title="Cesar Chavez"
+            alt="Cesar Chavez"
           />
           <figcaption className={TributeCSS["img-caption"]}>
             <i>An image of Cesar Chavez</i>

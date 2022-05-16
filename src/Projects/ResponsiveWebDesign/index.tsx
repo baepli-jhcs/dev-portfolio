@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
+import ProductLandingPage from "./ProductLandingPage";
 import RwdCSS from "./ResponsiveWebDesign.module.scss";
 import SurveyPage from "./SurveyPage";
 import TechnicalDocumentationPage from "./TechnicalDocumentationPage";
@@ -24,6 +25,7 @@ export default function ResponsiveWebDesign() {
       {number === 0 && <TechnicalDocumentationPage />}
       {number === 2 && <SurveyPage />}
       {number === 3 && <TributePage />}
+      {number === 4 && <ProductLandingPage />}
     </>
   );
 }

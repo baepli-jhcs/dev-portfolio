@@ -33,7 +33,7 @@ export const createHeaderTransition = (state: boolean) => {
       x: 0,
       transition: {
         duration: 0.55,
-        delay: state ? INITIAL : LOADING,
+        delay: (state ? INITIAL : LOADING) - 0.35,
       },
     },
     exit: {
@@ -51,7 +51,7 @@ export const createSubtitleTransition = (state: boolean, type: number) => {
       y: "0",
       transition: {
         duration: 0.8 - (type === 1 ? 0.1 : 0),
-        delay: 0.1 + (state ? INITIAL : LOADING) + (type === 1 ? 0.2 : 0),
+        delay: -0.25 + (state ? INITIAL : LOADING) + (type === 1 ? 0.2 : 0),
       },
     },
     exit: {

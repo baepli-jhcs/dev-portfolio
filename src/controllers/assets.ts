@@ -15,6 +15,13 @@ const assets: { [key: string]: [Asset] } = {
       path: "https://api.bena.works/images/Moose.jpg",
     },
   ],
+  "/projects": [
+    {
+      name: "projects",
+      type: "data",
+      path: "https://api.bena.works/projects",
+    },
+  ],
 };
 
 export default assets;

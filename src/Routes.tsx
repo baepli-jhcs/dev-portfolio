@@ -27,7 +27,7 @@ export default function PageRoutes() {
             <Route path="/" element={<Home images={assets} />} />
             <Route path="/about" element={<About images={assets} />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<Projects data={assets} />} />
             <Route
               path="/projects/rwd/:id/*"
               element={<ResponsiveWebDesign />}

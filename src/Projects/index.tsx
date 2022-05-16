@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store";
 import { pageTransition } from "../transitions";
 import ProjectsCSS from "./Projects.module.scss";
 
-export default function Projects() {
+export default function Projects(props: { data: any }) {
   const [searchText, setSearchText] = useState("");
+  const { data } = props;
+  console.log(data.get("projects"));
 
   return (
     <motion.div
@@ -27,6 +27,7 @@ export default function Projects() {
               className={ProjectsCSS["search-input"]}
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
+              autoComplete="off"
             />
           </div>
         </div>
