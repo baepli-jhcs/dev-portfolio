@@ -34,6 +34,7 @@ export default function PersonalPortfolio() {
             <img
               className={PerCSS["project-image"]}
               src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
+              alt="project 1"
             />
           </a>
           <a
@@ -44,6 +45,7 @@ export default function PersonalPortfolio() {
             <img
               className={PerCSS["project-image"]}
               src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
+              alt="project 2"
             />
           </a>
           <a
@@ -54,6 +56,7 @@ export default function PersonalPortfolio() {
             <img
               className={PerCSS["project-image"]}
               src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
+              alt="project 3"
             />
           </a>
         </div>
@@ -65,6 +68,7 @@ export default function PersonalPortfolio() {
           className={PerCSS["profile-link"]}
           href="https://github.com/baepli-jhcs"
           target="_blank"
+          rel="noreferrer"
         >
           <FaGithub /> GitHub
         </a>

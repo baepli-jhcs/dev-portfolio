@@ -15,6 +15,7 @@ import initialLoadSlice from "./slices/initialLoadSlice";
 import loadSlice from "./slices/loadSlice";
 import authSlice from "./slices/authSlice";
 import { getProjectApi } from "./apis/get-project";
+import { fetchQuoteApi } from "./apis/fetch-quote";
 
 const persistConfig = {
   key: "root",
@@ -27,6 +28,7 @@ const reducers = combineReducers({
   initialLoad: initialLoadSlice.reducer,
   auth: authSlice.reducer,
   contact: contactSlice.reducer,
+  [fetchQuoteApi.reducerPath]: fetchQuoteApi.reducer,
   [getProjectApi.reducerPath]: getProjectApi.reducer,
   [validateApi.reducerPath]: validateApi.reducer,
 });
@@ -40,7 +42,11 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(getProjectApi.middleware, validateApi.middleware),
+    }).concat(
+      fetchQuoteApi.middleware,
+      getProjectApi.middleware,
+      validateApi.middleware
+    ),
 });
 
 export default store;

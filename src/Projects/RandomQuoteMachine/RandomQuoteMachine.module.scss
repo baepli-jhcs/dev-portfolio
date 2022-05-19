@@ -1,0 +1,70 @@
+.container {
+  background-color: hsl(180, 45%, 25%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "system-ui", sans-serif;
+}
+
+.quote {
+  background-color: #eeeeee;
+  color: hsl(0, 0%, 20%);
+  padding: 4em 2.5em;
+  min-height: 40vh;
+  width: 90%;
+  box-shadow: 0 0 0.5rem hsl(240, 64%, 20%);
+}
+
+.bottom-bar {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.quote-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 4.5rem 0rem 2.5rem 0rem;
+}
+
+.quote-author {
+  text-align: center;
+}
+
+.button {
+  padding: 0.7em 1em;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+  width: 40%;
+  border-radius: 0.3rem;
+  text-align: center;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+}
+
+.button:hover {
+  background-color: hsl(216, 98%, 42%);
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .quote {
+    min-height: 35vh;
+    width: 50%;
+  }
+
+  .bottom-bar {
+    gap: 50px;
+  }
+
+  .button {
+    width: 20%;
+  }
+}
