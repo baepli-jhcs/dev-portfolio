@@ -11,6 +11,8 @@ import LoadingTransition from "./LoadingTransition";
 import useAssets from "./hooks/useAssets";
 import ResponsiveWebDesign from "./Projects/ResponsiveWebDesign";
 import RandomQuoteMachine from "./Projects/RandomQuoteMachine";
+import MarkdownPreviewer from "./Projects/MarkdownPreviewer";
+import DrumMachine from "./Projects/DrumMachine";
 
 export default function PageRoutes() {
   const loading = useLoad();
@@ -36,6 +38,11 @@ export default function PageRoutes() {
               />
               <Route path="rwd/:id" element={<ResponsiveWebDesign />} />
               <Route path="rwd" element={<Navigate to="/projects/rwd/0" />} />
+              <Route
+                path="markdown-previewer"
+                element={<MarkdownPreviewer />}
+              />
+              <Route path="drum-machine" element={<DrumMachine />} />
             </Route>
           </Routes>
         )}

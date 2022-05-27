@@ -3,7 +3,7 @@ import { useGetQuoteQuery } from "../../store/apis/fetch-quote";
 import RCSS from "./RandomQuoteMachine.module.scss";
 
 export default function RandomQuoteMachine() {
-  const { data, error } = useGetQuoteQuery(undefined);
+  const { data } = useGetQuoteQuery(undefined);
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
 

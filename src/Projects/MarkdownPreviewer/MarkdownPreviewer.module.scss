@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  width: 100%;
+  line-height: 1.4;
+}
+.editor-container {
+  width: 50%;
+  border: none;
+  background-color: darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editor {
+  padding: 25px;
+  width: 90%;
+  line-height: 1.4;
+  height: 90vh;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 4rem;
+  background-color: #eeeeee;
+  font-family: monospace;
+}
+.preview-container {
+  width: 50%;
+  border: none;
+  background-color: darkblue;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-top: 4rem;
+}
+.preview {
+  width: 100%;
+  background-color: #eeeeee;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.preview img {
+  display: block;
+  max-width: 90%;
+  margin: 30px auto;
+}
+
+.preview blockquote {
+  border-left: 3px solid black;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+
+.preview code {
+  background: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.preview pre {
+  display: block;
+  overflow: auto;
+  background: white;
+  padding: 5px;
+}
+
+.preview h1 {
+  border-bottom: 2px solid black;
+}
+
+.preview h2 {
+  border-bottom: 1px solid black;
+}
+
+.preview table {
+  border-collapse: collapse;
+}
+
+.preview td,
+.preview th {
+  border: 2px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
