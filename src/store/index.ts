@@ -16,6 +16,8 @@ import loadSlice from "./slices/loadSlice";
 import authSlice from "./slices/authSlice";
 import { getProjectApi } from "./apis/get-project";
 import { fetchQuoteApi } from "./apis/fetch-quote";
+import { calculatorSlice } from "./slices/mathSlice";
+import { calculatorOperationSlice } from "./slices/mathOperationSlice";
 
 const persistConfig = {
   key: "root",
@@ -28,6 +30,8 @@ const reducers = combineReducers({
   initialLoad: initialLoadSlice.reducer,
   auth: authSlice.reducer,
   contact: contactSlice.reducer,
+  calculator: calculatorSlice.reducer,
+  calculatorOperation: calculatorOperationSlice.reducer,
   [fetchQuoteApi.reducerPath]: fetchQuoteApi.reducer,
   [getProjectApi.reducerPath]: getProjectApi.reducer,
   [validateApi.reducerPath]: validateApi.reducer,

@@ -13,6 +13,7 @@ import ResponsiveWebDesign from "./Projects/ResponsiveWebDesign";
 import RandomQuoteMachine from "./Projects/RandomQuoteMachine";
 import MarkdownPreviewer from "./Projects/MarkdownPreviewer";
 import DrumMachine from "./Projects/DrumMachine";
+import Calculator from "./Projects/Calculator";
 
 export default function PageRoutes() {
   const loading = useLoad();
@@ -43,6 +44,7 @@ export default function PageRoutes() {
                 element={<MarkdownPreviewer />}
               />
               <Route path="drum-machine" element={<DrumMachine />} />
+              <Route path="calculator" element={<Calculator />} />
             </Route>
           </Routes>
         )}

@@ -18,7 +18,7 @@ $pad-color: hsl(0, 0%, 15%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: white;
 }
 
@@ -41,7 +41,7 @@ $pad-color: hsl(0, 0%, 15%);
 }
 
 .hit {
-  background-color: darken($pad-color, 10%) !important;
+  background-color: darken($pad-color, 12%) !important;
 }
 
 @media screen and (min-width: 55rem) {

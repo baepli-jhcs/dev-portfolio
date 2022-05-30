@@ -1,4 +1,4 @@
-const soundFiles = {
+const soundFiles: { [key: string]: { id: string; url: string } } = {
   q: {
     id: "Heater-1",
     url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
