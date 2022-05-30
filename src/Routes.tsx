@@ -14,6 +14,7 @@ import RandomQuoteMachine from "./Projects/RandomQuoteMachine";
 import MarkdownPreviewer from "./Projects/MarkdownPreviewer";
 import DrumMachine from "./Projects/DrumMachine";
 import Calculator from "./Projects/Calculator";
+import BreakClock from "./Projects/BreakClock";
 
 export default function PageRoutes() {
   const loading = useLoad();
@@ -45,6 +46,7 @@ export default function PageRoutes() {
               />
               <Route path="drum-machine" element={<DrumMachine />} />
               <Route path="calculator" element={<Calculator />} />
+              <Route path="break-clock" element={<BreakClock />} />
             </Route>
           </Routes>
         )}

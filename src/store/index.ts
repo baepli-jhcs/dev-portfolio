@@ -18,6 +18,8 @@ import { getProjectApi } from "./apis/get-project";
 import { fetchQuoteApi } from "./apis/fetch-quote";
 import { calculatorSlice } from "./slices/mathSlice";
 import { calculatorOperationSlice } from "./slices/mathOperationSlice";
+import breakSlice from "./slices/breakSlice";
+import clockSlice from "./slices/clockSlice";
 
 const persistConfig = {
   key: "root",
@@ -32,6 +34,8 @@ const reducers = combineReducers({
   contact: contactSlice.reducer,
   calculator: calculatorSlice.reducer,
   calculatorOperation: calculatorOperationSlice.reducer,
+  clock: clockSlice.reducer,
+  break: breakSlice.reducer,
   [fetchQuoteApi.reducerPath]: fetchQuoteApi.reducer,
   [getProjectApi.reducerPath]: getProjectApi.reducer,
   [validateApi.reducerPath]: validateApi.reducer,

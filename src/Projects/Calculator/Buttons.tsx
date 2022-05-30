@@ -29,6 +29,7 @@ const Buttons = (props: { mainValue: string; operationList: any }) => {
   for (let i = 9; i >= 0; i--) {
     numberButtons.push(
       <button
+        key={i}
         className={ButtonsCSS[buttonNames[i]]}
         onClick={() => {
           if (props.operationList.length === 0) {
