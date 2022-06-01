@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { pageTransition } from "../transitions";
+import map from "./map";
 import ProjectsCSS from "./Projects.module.scss";
 
 export default function Projects(props: { data: any }) {
   const [searchText, setSearchText] = useState("");
-  const { data } = props;
-  console.log(data.get("projects"));
+  const projects = props.data.get("projects");
+  const labels: MutableRefObject<string[]> = useRef([]);
+
+  useEffect(() => {
+    for (let project of projects) {
+      labels.current = labels.current.concat(project.labels);
+    }
+  }, [projects]);
+
+  const mapped = map(projects);
 
   return (
     <motion.div
@@ -16,22 +25,25 @@ export default function Projects(props: { data: any }) {
       exit="exit"
       variants={pageTransition}
     >
-      <div className={ProjectsCSS.projects}>
-        <h2 className={ProjectsCSS.header}>These are some of my projects:</h2>
-        <div className={ProjectsCSS.filters}>
-          <div className={ProjectsCSS.search}>
-            <input
-              type="text"
-              placeholder="Search..."
-              name="search"
-              className={ProjectsCSS["search-input"]}
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              autoComplete="off"
-            />
-          </div>
-        </div>
-        <div className={ProjectsCSS.grid}></div>
+      <div className={ProjectsCSS.inner}>
+        <h1 className={ProjectsCSS.header}>Projects</h1>
+        <p className={ProjectsCSS.description}>
+          Check out my latest projects! These demonstrate a wide varety of
+          skills including React and Express web development, C++ with Unreal
+          and Arduino, Python and Data Science, and Java.
+        </p>
+        <label htmlFor="input">
+          <input
+            type="search"
+            title="Search"
+            placeholder="Portfolio"
+            className={ProjectsCSS.search}
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+        </label>
+
+        <div className={ProjectsCSS.grid}>{mapped}</div>
       </div>
       {/* <footer className={ProjectsCSS.footer}>
         <h2>Find me on...</h2>

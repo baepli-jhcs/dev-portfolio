@@ -6,7 +6,11 @@ export default function map(
 ): JSX.Element[] | JSX.Element {
   if (!projects) return <> </>;
   let projectsReturn = projects.map((project: Project) => {
-    return <div className={ProjectsCSS.project}> </div>;
+    return (
+      <div className={ProjectsCSS.project}>
+        <img src={project.image} alt={project.name} />
+      </div>
+    );
   });
   return projectsReturn;
 }
