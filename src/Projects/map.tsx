@@ -7,8 +7,8 @@ export default function map(
   if (!projects) return <> </>;
   let projectsReturn = projects.map((project: Project) => {
     return (
-      <div className={ProjectsCSS.project}>
-        <img src={project.image} alt={project.name} />
+      <div className={ProjectsCSS.project} key={project.name}>
+        <img src={project.image} alt={project.name} loading="lazy" />
       </div>
     );
   });
