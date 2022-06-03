@@ -6,6 +6,7 @@ import Login from "./Login";
 import Admin from "./Admin";
 import Logout from "./Logout";
 import ProtectedRoutes from "./ProtectedRoutes";
+import EditProject from "./Admin/Edit";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/edit/:id" element={<EditProject />} />
         </Route>
         <Route path="/logout" element={<Logout />} />
         <Route path="*" element={<MostRoutes />} />

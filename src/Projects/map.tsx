@@ -8,7 +8,18 @@ export default function map(
   let projectsReturn = projects.map((project: Project) => {
     return (
       <div className={ProjectsCSS.project} key={project.name}>
-        <img src={project.image} alt={project.name} loading="lazy" />
+        <img
+          src={project.image}
+          alt={project.name}
+          loading="lazy"
+          className={ProjectsCSS.image}
+        />
+        <div className={ProjectsCSS["info-container"]}>
+          <div className={ProjectsCSS.info}>
+            <h2 className={ProjectsCSS.name}>{project.name}</h2>
+            <p className={ProjectsCSS.description}>{project.description}</p>
+          </div>
+        </div>
       </div>
     );
   });

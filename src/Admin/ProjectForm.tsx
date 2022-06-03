@@ -57,36 +57,42 @@ export default function ProjectForm() {
         placeholder="name"
         onChange={(e) => handleChange(e, setName)}
         value={name}
+        required
       />
       <input
         type="text"
         placeholder="description"
         onChange={(e) => handleChange(e, setDescription)}
         value={description}
+        required
       />
       <input
         type="text"
         placeholder="image"
         onChange={(e) => handleChange(e, setImage)}
         value={image}
+        required
       />
       <input
         type="text"
         placeholder="git"
         onChange={(e) => handleChange(e, setGit)}
         value={git}
+        required
       />
       <input
         type="text"
         placeholder="demo"
         onChange={(e) => handleChange(e, setDemo)}
         value={demo}
+        required
       />
       <input
         type="text"
         placeholder="enter labels, separated by commas"
         onChange={(e) => handleChange(e, setLabels)}
         value={labels}
+        required
       />
       <button type="submit">Submit</button>
     </form>

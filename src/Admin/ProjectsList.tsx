@@ -2,6 +2,7 @@ import { FaTrash } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import { useGetProjectQuery } from "../store/apis/get-project";
+import AdminCSS from "./Admin.module.scss";
 
 export default function ProjectsList() {
   let projects: JSX.Element[];
@@ -17,6 +18,12 @@ export default function ProjectsList() {
           <h1>{project.name}</h1>
           <p>{project.description}</p>
           <FaTrash onClick={(e) => void handleDelete(e, project.name)} />
+          <button
+            onClick={() => edit(project["_id"])}
+            className={AdminCSS.pedit}
+          >
+            Edit
+          </button>
         </li>
       );
     });
@@ -37,6 +44,10 @@ export default function ProjectsList() {
       body: JSON.stringify({ name, token }),
     });
     window.location.reload();
+  };
+
+  const edit = async (id: string): Promise<void> => {
+    window.location.href = `/admin/edit/${id}`;
   };
 
   return <ul>{projects}</ul>;

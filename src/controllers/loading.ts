@@ -21,9 +21,9 @@ class Loading {
         });
       } else if (asset.type === "data") {
         promise = new Promise(async (resolve, reject) => {
-          let projects: any = await Loading.fetchData(asset.path);
-          table.set(asset.name, projects);
-          resolve(projects);
+          let data: any = await Loading.fetchData(asset.path);
+          table.set(asset.name, data);
+          resolve(data);
         });
       }
       promises.push(promise);
