@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
-import { use100vh } from "react-div-100vh";
 import { pageTransition } from "../transitions";
 import map from "./map";
 import ProjectsCSS from "./Projects.module.scss";
@@ -17,7 +16,6 @@ export default function Projects(props: { data: any }) {
   }, [projects]);
 
   const mapped = map(projects);
-  const height = use100vh() || "100vh";
 
   return (
     <motion.div
@@ -25,7 +23,6 @@ export default function Projects(props: { data: any }) {
       initial="initial"
       animate="animate"
       exit="exit"
-      style={{ height }}
       variants={pageTransition}
     >
       <div className={ProjectsCSS.inner}>

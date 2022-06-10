@@ -11,11 +11,13 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadActions } from "../store/slices/loadSlice";
 import useInitialLoad from "../hooks/useInitialLoad";
+import { use100vh } from "react-div-100vh";
 function Home(props: { images: any }) {
   const { images } = props;
   const [hover, setHover] = useState(false);
   const dispatch = useDispatch();
   const initialLoad = useInitialLoad();
+  const height = use100vh() || "100vh";
 
   return (
     <motion.div
@@ -24,6 +26,7 @@ function Home(props: { images: any }) {
       exit="exit"
       variants={pageTransition}
       className={HomeCSS.container}
+      style={{ height }}
     >
       <div className={`content ${HomeCSS["title-container"]}`}>
         <div className={HomeCSS.title}>
