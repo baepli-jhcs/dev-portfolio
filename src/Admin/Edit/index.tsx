@@ -40,6 +40,7 @@ export default function EditProject() {
         },
         body: JSON.stringify(Object.fromEntries(map)),
       });
+      window.location.reload();
     } catch (err) {
       return console.log(err);
     }
