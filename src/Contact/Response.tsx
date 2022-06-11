@@ -21,7 +21,7 @@ export default function Response(props: { loadingState: number }) {
           loadingState === 1
             ? "rgba(173, 216, 230, 1)"
             : loadingState === 2
-            ? "rgba(0, 128, 0, 1)"
+            ? "rgba(128, 255, 128, 1)"
             : "rgba(255, 0, 0, 1)",
         x: 0,
       }}

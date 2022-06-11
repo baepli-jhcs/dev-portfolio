@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { pageTransition } from "../transitions";
+import filterText from "./filter";
 import map from "./map";
 import ProjectsCSS from "./Projects.module.scss";
 
@@ -15,7 +16,8 @@ export default function Projects(props: { data: any }) {
     }
   }, [projects]);
 
-  const mapped = map(projects);
+  const filtered = filterText(projects, searchText);
+  const mapped = map(filtered);
 
   return (
     <motion.div

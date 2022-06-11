@@ -1,3 +1,5 @@
+$link-color: hsl(245, 34%, 80%);
+
 .container {
   min-height: 100vh;
   background: linear-gradient(62deg, hsl(210, 5%, 10%) 0%, hsl(270, 5%, 10%));
@@ -28,7 +30,7 @@
 }
 
 .search {
-  width: 50%;
+  width: 100%;
   background-color: hsl(0, 0%, 100%);
   padding: 0.5rem;
   box-sizing: border-box;
@@ -50,11 +52,48 @@
   outline: 2px solid white;
 }
 
-.image {
+.figure {
   width: 100%;
   height: 250px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  backdrop-filter: none;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.link {
+  background-color: $link-color;
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+  box-sizing: border-box;
+  padding: 0.9em 1em;
+}
+
+.link:active {
+  background-color: darken($link-color, 8%);
+}
+
+.demo {
+  border-right: 2px solid black;
 }
 
 .info-container {
@@ -73,5 +112,28 @@
 @media screen and (min-width: 40em) {
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .link {
+    margin: 0 0.3em;
+    border-radius: 0.5em;
+    padding: 0.9em 1.2em;
+  }
+
+  .overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .figure:hover .overlay {
+    opacity: 1;
+    backdrop-filter: brightness(0.4) blur(5px);
+  }
+
+  .demo {
+    border-right: none;
   }
 }
