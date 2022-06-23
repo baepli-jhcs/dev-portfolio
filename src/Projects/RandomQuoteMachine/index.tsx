@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import Div100vh from "react-div-100vh";
 import { useGetQuoteQuery } from "../../store/apis/fetch-quote";
 import RCSS from "./RandomQuoteMachine.module.scss";
 
@@ -23,7 +24,7 @@ export default function RandomQuoteMachine() {
     setNewQuote();
   }, [data, setNewQuote]);
   return (
-    <div className={RCSS.container}>
+    <Div100vh className={RCSS.container}>
       <div className={RCSS.quote}>
         <div className={RCSS["quote-text"]}>{quote}</div>
         <div className={RCSS["quote-author"]}>
@@ -43,6 +44,6 @@ export default function RandomQuoteMachine() {
           </a>
         </div>
       </div>
-    </div>
+    </Div100vh>
   );
 }

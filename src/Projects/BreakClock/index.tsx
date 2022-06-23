@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { RootState } from "../../store";
 import { clockActions } from "../../store/slices/clockSlice";
 import { breakActions } from "../../store/slices/breakSlice";
+import Div100vh from "react-div-100vh";
 
 function App() {
   const clockValue = useSelector((state: RootState) => state.clock);
@@ -72,7 +73,7 @@ function App() {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
   return (
-    <div className={BreakCSS.container}>
+    <Div100vh className={BreakCSS.container}>
       <div className={BreakCSS["main-container"]}>
         <motion.div
           animate={{
@@ -189,7 +190,7 @@ function App() {
         src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
         ref={audio}
       />
-    </div>
+    </Div100vh>
   );
 }
 

@@ -1,6 +1,7 @@
 import { LegacyRef, useCallback, useEffect, useRef, useState } from "react";
 import soundFiles from "./soundFiles";
 import DrumCSS from "./DrumMachine.module.scss";
+import Div100vh from "react-div-100vh";
 
 export default function DrumMachine() {
   let q: LegacyRef<HTMLAudioElement> | undefined = useRef(null);
@@ -78,11 +79,11 @@ export default function DrumMachine() {
   }
 
   return (
-    <div className={DrumCSS.container}>
+    <Div100vh className={DrumCSS.container}>
       <div className={DrumCSS.inner}>
         <div className={DrumCSS.display}>{display}</div>
         <div className={DrumCSS.grid}>{divs}</div>
       </div>
-    </div>
+    </Div100vh>
   );
 }
