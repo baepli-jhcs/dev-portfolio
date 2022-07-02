@@ -12,6 +12,7 @@ export const persistor = persistStore(store);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      {/*@ts-ignore*/}
       <PersistGate loading={null} persistor={persistor}>
         <App />
       </PersistGate>

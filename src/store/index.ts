@@ -20,6 +20,7 @@ import { calculatorSlice } from "./slices/mathSlice";
 import { calculatorOperationSlice } from "./slices/mathOperationSlice";
 import breakSlice from "./slices/breakSlice";
 import clockSlice from "./slices/clockSlice";
+import { convertUnitApi } from "./apis/convert-unit";
 
 const persistConfig = {
   key: "root",
@@ -36,6 +37,7 @@ const reducers = combineReducers({
   calculatorOperation: calculatorOperationSlice.reducer,
   clock: clockSlice.reducer,
   break: breakSlice.reducer,
+  [convertUnitApi.reducerPath]: convertUnitApi.reducer,
   [fetchQuoteApi.reducerPath]: fetchQuoteApi.reducer,
   [getProjectApi.reducerPath]: getProjectApi.reducer,
   [validateApi.reducerPath]: validateApi.reducer,
