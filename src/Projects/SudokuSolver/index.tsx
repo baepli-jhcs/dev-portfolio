@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useLazySolveSudokuQuery } from "../../store/apis/solve-sudoku";
 import { spinnerVariants } from "./transitions";
 import SudokuCSS from "./SudokuSolver.module.scss";
+import { use100vh } from "react-div-100vh";
 
 const defaultPuzzles = [
   "1.5..2.84..63.12.7.2..5.....9..1....8.2.3674.3.7.2..9.47...8..1..16....926914.37.",
@@ -81,8 +82,10 @@ export default function SudokuSolver() {
     }
   }, [result]);
 
+  const height = use100vh() || "100vh";
+
   return (
-    <div className={SudokuCSS.container}>
+    <div className={SudokuCSS.container} style={{ minHeight: height }}>
       <div className={SudokuCSS.inner}>
         <div className={SudokuCSS.grid} ref={gridDiv}>
           {result.isFetching && (
