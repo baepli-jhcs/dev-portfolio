@@ -26,10 +26,15 @@ export default function SudokuSolver() {
     return (
       <div className={SudokuCSS.box}>
         <input
-          type="text"
+          type="number"
           title={`box ${index}`}
           value={char === "." ? "" : char}
-          onChange={(e) => handleChange(e.target.value, index)}
+          onChange={(e) =>
+            handleChange(
+              e.target.value.length === 1 ? e.target.value : e.target.value[1],
+              index
+            )
+          }
           className={SudokuCSS.input}
         />
       </div>
