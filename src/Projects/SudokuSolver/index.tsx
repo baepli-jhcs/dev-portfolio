@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Div100vh from "react-div-100vh";
+import { useLazySolveSudokuQuery } from "../../store/apis/solve-sudoku";
 import SudokuCSS from "./SudokuSolver.module.scss";
 
 const defaultPuzzles = [
@@ -66,9 +67,17 @@ export default function SudokuSolver() {
     };
   }, [setGridHeight]);
 
+  const [trigger, result] = useLazySolveSudokuQuery();
+
   const handleSolve = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(puzzle.join(""));
+    trigger(puzzle.join(""));
   };
+
+  useEffect(() => {
+    if (result.data) {
+      setPuzzle(result.data.solution.split(""));
+    }
+  }, [result]);
 
   return (
     <Div100vh className={SudokuCSS.container}>

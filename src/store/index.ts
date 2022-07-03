@@ -21,6 +21,7 @@ import { calculatorOperationSlice } from "./slices/mathOperationSlice";
 import breakSlice from "./slices/breakSlice";
 import clockSlice from "./slices/clockSlice";
 import { convertUnitApi } from "./apis/convert-unit";
+import { sudokuApi } from "./apis/solve-sudoku";
 
 const persistConfig = {
   key: "root",
@@ -40,6 +41,7 @@ const reducers = combineReducers({
   [convertUnitApi.reducerPath]: convertUnitApi.reducer,
   [fetchQuoteApi.reducerPath]: fetchQuoteApi.reducer,
   [getProjectApi.reducerPath]: getProjectApi.reducer,
+  [sudokuApi.reducerPath]: sudokuApi.reducer,
   [validateApi.reducerPath]: validateApi.reducer,
 });
 
@@ -55,6 +57,8 @@ const store = configureStore({
     }).concat(
       fetchQuoteApi.middleware,
       getProjectApi.middleware,
+      convertUnitApi.middleware,
+      sudokuApi.middleware,
       validateApi.middleware
     ),
 });
