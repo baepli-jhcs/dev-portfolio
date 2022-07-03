@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import Div100vh from "react-div-100vh";
 import { useLazySolveSudokuQuery } from "../../store/apis/solve-sudoku";
 import SudokuCSS from "./SudokuSolver.module.scss";
 
@@ -80,7 +79,7 @@ export default function SudokuSolver() {
   }, [result]);
 
   return (
-    <Div100vh className={SudokuCSS.container}>
+    <div className={SudokuCSS.container}>
       <div className={SudokuCSS.inner}>
         <div className={SudokuCSS.grid} ref={gridDiv}>
           {boxes}
@@ -93,6 +92,6 @@ export default function SudokuSolver() {
           </button>
         </div>
       </div>
-    </Div100vh>
+    </div>
   );
 }
