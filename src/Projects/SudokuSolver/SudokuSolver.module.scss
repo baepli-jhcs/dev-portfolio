@@ -6,27 +6,74 @@
   background-color: hsl(242, 25%, 25%);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  background-color: white;
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: min(650px, 100%);
+  flex-direction: column;
 }
 
-.enclosure {
-  border: 3px solid black;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.borders {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   width: 100%;
+  background-color: hsl(180, 25%, 75%);
+  border: 4px solid black;
+}
+
+.border {
+  border: 3px solid black;
   height: 100%;
+  box-sizing: border-box;
+}
+
+.button {
+  padding: 0.5em;
+  background-color: hsl(180, 25%, 75%);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: darken(hsl(180, 25%, 75%), 10%);
 }
 
 .box {
   border: 1px solid black;
   width: 100%;
+  position: relative;
   height: 100%;
+  z-index: 2;
+  box-sizing: border-box;
 }
 
 .input {

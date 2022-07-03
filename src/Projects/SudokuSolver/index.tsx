@@ -14,27 +14,32 @@ const defaultPuzzle =
   defaultPuzzles[Math.floor(Math.random() * defaultPuzzles.length)];
 
 export default function SudokuSolver() {
-  const [puzzle, setPuzzle] = useState(defaultPuzzle);
+  const [puzzle, setPuzzle] = useState(defaultPuzzle.split(""));
 
   const handleChange = (newChar: string, index: number) => {
-    const newPuzzle =
-      puzzle.slice(0, index) + newChar + puzzle.slice(index + 1);
+    const newPuzzle = [...puzzle];
+    let correctChar: string;
+    if (newChar === "-1") {
+      correctChar = "9";
+    } else if (newChar.length === 0) {
+      correctChar = ".";
+    } else if (newChar.length > 1) {
+      correctChar = newChar[newChar.length - 1];
+    } else {
+      correctChar = newChar[0];
+    }
+    newPuzzle[index] = correctChar;
     setPuzzle(newPuzzle);
   };
 
-  let boxes = puzzle.split("").map((char, index) => {
+  let boxes = puzzle.map((char, index) => {
     return (
       <div className={SudokuCSS.box}>
         <input
           type="number"
           title={`box ${index}`}
           value={char === "." ? "" : char}
-          onChange={(e) =>
-            handleChange(
-              e.target.value.length === 1 ? e.target.value : e.target.value[1],
-              index
-            )
-          }
+          onChange={(e) => handleChange(e.target.value, index)}
           className={SudokuCSS.input}
         />
       </div>
@@ -43,11 +48,9 @@ export default function SudokuSolver() {
 
   let gridDiv: React.RefObject<HTMLDivElement> = useRef(null);
 
-  let enclosures: JSX.Element[] = [];
+  let borders: JSX.Element[] = [];
   for (let i = 0; i < 9; i++) {
-    enclosures.push(
-      <div className={SudokuCSS.enclosure}>{boxes.slice(i * 9, i * 9 + 9)}</div>
-    );
+    borders.push(<div className={SudokuCSS.border} />);
   }
 
   const setGridHeight = useCallback(() => {
@@ -63,10 +66,23 @@ export default function SudokuSolver() {
     };
   }, [setGridHeight]);
 
+  const handleSolve = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(puzzle.join(""));
+  };
+
   return (
     <Div100vh className={SudokuCSS.container}>
-      <div className={SudokuCSS.grid} ref={gridDiv}>
-        {enclosures}
+      <div className={SudokuCSS.inner}>
+        <div className={SudokuCSS.grid} ref={gridDiv}>
+          {boxes}
+          <div className={SudokuCSS.borders}>{borders}</div>
+        </div>
+
+        <div className={SudokuCSS.buttons}>
+          <button onClick={handleSolve} className={SudokuCSS.button}>
+            Solve Puzzle
+          </button>
+        </div>
       </div>
     </Div100vh>
   );
