@@ -1,5 +1,8 @@
+import { Ring } from "@uiball/loaders";
+import { motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLazySolveSudokuQuery } from "../../store/apis/solve-sudoku";
+import { spinnerVariants } from "./transitions";
 import SudokuCSS from "./SudokuSolver.module.scss";
 
 const defaultPuzzles = [
@@ -82,6 +85,18 @@ export default function SudokuSolver() {
     <div className={SudokuCSS.container}>
       <div className={SudokuCSS.inner}>
         <div className={SudokuCSS.grid} ref={gridDiv}>
+          {result.isFetching && (
+            <motion.div
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.3 }}
+              className={SudokuCSS.spinner}
+              variants={spinnerVariants}
+            >
+              <Ring size={30} color="white" />
+            </motion.div>
+          )}
           {boxes}
           <div className={SudokuCSS.borders}>{borders}</div>
         </div>
