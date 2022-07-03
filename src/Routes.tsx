@@ -16,6 +16,7 @@ import DrumMachine from "./Projects/DrumMachine";
 import Calculator from "./Projects/Calculator";
 import BreakClock from "./Projects/BreakClock";
 import UnitConverter from "./Projects/UnitConverter";
+import SudokuSolver from "./Projects/SudokuSolver";
 
 export default function PageRoutes() {
   const loading = useLoad();
@@ -49,6 +50,7 @@ export default function PageRoutes() {
               <Route path="calculator" element={<Calculator />} />
               <Route path="break-clock" element={<BreakClock />} />
               <Route path="unit-converter" element={<UnitConverter />} />
+              <Route path="sudoku-solver" element={<SudokuSolver />} />
             </Route>
           </Routes>
         )}
