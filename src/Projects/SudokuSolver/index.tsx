@@ -77,7 +77,7 @@ export default function SudokuSolver() {
   };
 
   useEffect(() => {
-    if (result.data && result.data.solution) {
+    if (!result.isFetching && result.data && result.data.solution) {
       setPuzzle(result.data.solution.split(""));
     }
   }, [result]);
