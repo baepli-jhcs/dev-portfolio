@@ -80,7 +80,10 @@ export default function AmericanBritishTranslator() {
                 <div className={TransCSS.error}>Error. Try again later!</div>
               )}
               {!result.error && result.data && (
-                <div className={TransCSS.result}>{result.data.translation}</div>
+                <div
+                  className={TransCSS.result}
+                  dangerouslySetInnerHTML={{ __html: result.data.translation }}
+                ></div>
               )}
             </h2>
           </div>
