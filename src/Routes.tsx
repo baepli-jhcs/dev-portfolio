@@ -17,6 +17,7 @@ import Calculator from "./Projects/Calculator";
 import BreakClock from "./Projects/BreakClock";
 import UnitConverter from "./Projects/UnitConverter";
 import SudokuSolver from "./Projects/SudokuSolver";
+import AmericanBritishTranslator from "./Projects/AmericanBritishTranslator";
 
 export default function PageRoutes() {
   const loading = useLoad();
@@ -45,6 +46,10 @@ export default function PageRoutes() {
               <Route
                 path="markdown-previewer"
                 element={<MarkdownPreviewer />}
+              />
+              <Route
+                path="american-british-translator"
+                element={<AmericanBritishTranslator />}
               />
               <Route path="drum-machine" element={<DrumMachine />} />
               <Route path="calculator" element={<Calculator />} />

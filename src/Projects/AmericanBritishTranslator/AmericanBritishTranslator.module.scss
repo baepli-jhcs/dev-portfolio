@@ -1,0 +1,161 @@
+$background-color: hsl(299, 20%, 60%);
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-color;
+  color: white;
+}
+
+.header {
+  box-sizing: border-box;
+  font-size: clamp(2.25rem, 5vw, 2.5rem);
+  padding: 0em 0.7em 0.9em 0.55em;
+  margin: 0;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 3px solid white;
+}
+
+.inner {
+  width: min(100%, 750px);
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(147, 100%, 4%);
+  border-radius: 0.5em;
+  padding: 4.8em 2em;
+  border: 8px solid white;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1.3em 0.8em;
+  box-sizing: border-box;
+  border-bottom: 2px solid white;
+}
+
+.form-inputs {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 2em;
+}
+
+.input-container {
+  height: 100px;
+  width: 100%;
+  box-shadow: 0px 0px 5px hsl(180, 100%, 55%);
+}
+
+.text {
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  background-color: hsla(0, 0%, 0%, 0.8);
+}
+
+.options {
+  display: flex;
+  padding: 0 0.5em;
+  height: 100%;
+}
+
+.options:focus {
+  outline: none;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: hsl(180, 100%, 95%);
+  color: black;
+  box-sizing: border-box;
+  transition: 0.15s ease-in-out;
+  outline: 1px solid hsl(113, 100%, 50%);
+}
+
+.button:active {
+  background-color: hsl(180, 100%, 83%);
+}
+
+.output {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0.8em;
+  box-sizing: border-box;
+  padding-bottom: 0;
+}
+
+.result-header {
+  margin: 0;
+  margin-top: 0.85em;
+  font-size: 1.75rem;
+}
+
+.result-text {
+  display: inline;
+}
+
+.result {
+  display: inline;
+  font-weight: 400;
+  color: hsl(236, 100%, 89%);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+
+.error {
+  display: inline;
+  font-weight: 400;
+  margin-left: 0.3em;
+  color: hsl(0, 100%, 70%);
+}
+
+.info {
+  margin-top: 0.8em;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+.spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  background-color: hsl(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .button:hover {
+    background-color: hsl(180, 100%, 85%);
+  }
+}

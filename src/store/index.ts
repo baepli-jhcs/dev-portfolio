@@ -22,6 +22,7 @@ import breakSlice from "./slices/breakSlice";
 import clockSlice from "./slices/clockSlice";
 import { convertUnitApi } from "./apis/convert-unit";
 import { sudokuApi } from "./apis/solve-sudoku";
+import { translateAmericanBritishApi } from "./apis/translate-american-british";
 
 const persistConfig = {
   key: "root",
@@ -42,6 +43,8 @@ const reducers = combineReducers({
   [fetchQuoteApi.reducerPath]: fetchQuoteApi.reducer,
   [getProjectApi.reducerPath]: getProjectApi.reducer,
   [sudokuApi.reducerPath]: sudokuApi.reducer,
+  [translateAmericanBritishApi.reducerPath]:
+    translateAmericanBritishApi.reducer,
   [validateApi.reducerPath]: validateApi.reducer,
 });
 
@@ -59,6 +62,7 @@ const store = configureStore({
       getProjectApi.middleware,
       convertUnitApi.middleware,
       sudokuApi.middleware,
+      translateAmericanBritishApi.middleware,
       validateApi.middleware
     ),
 });
