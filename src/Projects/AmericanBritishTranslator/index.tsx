@@ -31,18 +31,15 @@ export default function AmericanBritishTranslator() {
         </div>
         <div className={TransCSS.body}>
           <form className={TransCSS.form} onSubmit={handleSubmit}>
-            <div className={TransCSS["input-container"]}>
-              <input
-                type="text"
-                className={TransCSS.text}
-                placeholder="Enter some text"
-                value={value}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setValue(e.target.value)
-                }
-                required
-              />
-            </div>
+            <textarea
+              className={TransCSS.text}
+              placeholder="Enter some text"
+              value={value}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                setValue(e.target.value)
+              }
+              required
+            />
             <div className={TransCSS["form-inputs"]}>
               <select
                 title="Unit selection"
