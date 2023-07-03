@@ -4,7 +4,7 @@ import { Message } from "../../types/message";
 export const submitMessage = createAsyncThunk(
   "contact/submitMessage",
   async (message: Message) => {
-    let data = await fetch("https://api.bena.works/contact/", {
+    let data = await fetch(`${process.env.REACT_APP_API_URL}/contact/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(message),

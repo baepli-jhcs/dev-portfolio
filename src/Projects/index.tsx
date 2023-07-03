@@ -30,9 +30,21 @@ export default function Projects(props: { data: any }) {
       <div className={ProjectsCSS.inner}>
         <h1 className={ProjectsCSS.header}>Projects</h1>
         <p className={ProjectsCSS.description}>
-          Check out my latest projects! These demonstrate a wide varety of
-          skills including React and Express web development, C++ with Unreal
-          and Arduino, Python and Data Science, and Java.
+          Check out my latest projects! If you want to see more, my GitHub
+          profile at
+          <a
+            className={ProjectsCSS["profile-link"]}
+            title="link"
+            href="https://github.com/baepli-jhcs"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span className={ProjectsCSS["profile-link-text"]}>
+              {" "}
+              baepli-jhcs{" "}
+            </span>
+          </a>
+          may be of interest to you.
         </p>
         <label htmlFor="input">
           <input

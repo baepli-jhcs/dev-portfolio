@@ -23,6 +23,8 @@ export default function AmericanBritishTranslator() {
     trigger({ text: value, locale }, true);
   };
 
+  console.log(result);
+
   return (
     <Div100vh className={TransCSS.container}>
       <div className={TransCSS.inner}>

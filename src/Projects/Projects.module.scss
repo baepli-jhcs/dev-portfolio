@@ -109,6 +109,14 @@ $link-color: hsl(245, 34%, 80%);
   padding: 0 0.7em;
 }
 
+.profile-link {
+  text-decoration: none;
+  // purple color
+  color: hsl(280, 70%, 67%);
+  font-size: 1.1rem;
+  padding: 0.2em 0;
+}
+
 @media screen and (min-width: 40em) {
   .grid {
     grid-template-columns: 1fr 1fr;

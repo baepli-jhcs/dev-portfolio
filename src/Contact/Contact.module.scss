@@ -106,6 +106,13 @@ $background-color: hsl(236, 12%, 35%);
   width: 100%;
 }
 
+.email-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid hsl(95, 47%, 59%);
+  transition: 0.5s border-bottom;
+}
+
 .submit {
   margin-top: 0.5em;
   padding: 0.5em 0.2em;
@@ -172,7 +179,7 @@ $background-color: hsl(236, 12%, 35%);
     background-color: $background-color;
   }
   .form-container {
-    padding: 5em;
+    padding: 7em;
     grid-template-columns: 1fr 1fr;
     font-size: 1.15rem;
     margin: 2em 0;

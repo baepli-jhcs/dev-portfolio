@@ -109,7 +109,7 @@ $button-color: #a972cb;
     height: 100%;
   }
   .buttons {
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     display: grid;
     grid-gap: 5rem;
     width: 100%;
@@ -125,5 +125,10 @@ $button-color: #a972cb;
   .content {
     padding: 15%;
     overflow: auto;
+  }
+
+  .content-container {
+    max-width: 1000px;
+    margin: 0 auto;
   }
 }

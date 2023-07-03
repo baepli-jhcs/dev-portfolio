@@ -11,8 +11,9 @@ export const translateAmericanBritishApi = createApi({
       { text: string; locale: string }
     >({
       query: (str) => ({
-        url: `/?text=${str.text}?locale=${str.locale}`,
-        method: "GET",
+        url: "/",
+        method: "POST",
+        body: str,
       }),
     }),
   }),

@@ -68,7 +68,15 @@ export default function Contact() {
           </h1>
           <p className={ContactCSS.text}>
             I'm always open to new opportunities and ideas! If you have any
-            questions or concerns, feel free to message me below.
+            questions or concerns, feel free to message me below or at my email
+            (
+            <a
+              href="mailto:benaepli@gmail.com"
+              className={ContactCSS["email-link"]}
+            >
+              benaepli@gmail.com
+            </a>
+            ).
           </p>
           <div className={`${ContactCSS.name} ${ContactCSS.input}`}>
             <input

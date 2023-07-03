@@ -4,11 +4,20 @@ import ProjectsCSS from "./Projects.module.scss";
 export default function map(projects: Project[]): JSX.Element[] | JSX.Element {
   if (!projects) return <> </>;
   let projectsReturn = projects.map((project: Project) => {
+    let projectImage = project.image;
+    // Replace text LOCAL_API with env variable react_app_api_url
+    if (projectImage.includes("LOCAL_API")) {
+      projectImage = projectImage.replace(
+        "LOCAL_API",
+        process.env.REACT_APP_API_URL as string
+      );
+    }
+
     return (
       <div className={ProjectsCSS.project} key={project.name}>
         <figure className={ProjectsCSS.figure}>
           <img
-            src={project.image}
+            src={projectImage}
             alt={project.name}
             loading="lazy"
             className={ProjectsCSS.image}
