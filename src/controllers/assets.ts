@@ -5,7 +5,7 @@ const assets: { [key: string]: [Asset] } = {
     {
       name: "background",
       type: "image",
-      path: `${process.env.REACT_APP_API_URL}/images/laptop.jpg`,
+      path: `${process.env.REACT_APP_API_URL}/images/Laptop.jpg`,
     },
   ],
   "/about": [
