@@ -7,11 +7,20 @@ body {
   min-height: 100vh;
   width: 100%;
   color: hsl(0, 10%, 95%);
+  background-color: hsl(0, 0%, 1%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-container {
   display: -ms-grid;
   display: grid;
-  background-color: hsl(230, 5%, 10%);
   grid-template-columns: 1fr;
   grid-template-rows: 65vh auto;
+  min-height: 100vh;
+  width: min(2300px, 100%);
+  background-color: hsl(230, 5%, 10%);
 }
 
 .content {
@@ -85,7 +94,7 @@ $button-color: #a972cb;
 }
 
 @media screen and (min-width: 900px) {
-  .container {
+  .inner-container {
     grid-template-columns: 38% 62%;
     grid-template-rows: 1fr;
   }
@@ -118,7 +127,7 @@ $button-color: #a972cb;
 }
 
 @media screen and (min-width: 1300px) {
-  .container {
+  .inner-container {
     grid-template-columns: 45% 55%;
     grid-template-rows: 1fr;
   }
@@ -128,7 +137,6 @@ $button-color: #a972cb;
   }
 
   .content-container {
-    max-width: 1000px;
     margin: 0 auto;
   }
 }
