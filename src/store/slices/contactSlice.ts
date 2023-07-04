@@ -20,7 +20,12 @@ const initialState = {
 const contactSlice = createSlice({
   name: "contact",
   initialState,
-  reducers: {},
+  reducers: {
+    reset: (state) => {
+      state.response = {};
+      state.status = "";
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(submitMessage.pending, (state) => {
       state.status = "loading";

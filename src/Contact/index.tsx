@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import { submitMessage } from "../store/slices/contactSlice";
+import { contactActions, submitMessage } from "../store/slices/contactSlice";
 import { pageTransition } from "../transitions";
 import { Message } from "../types/message";
 import ContactCSS from "./Contact.module.scss";
@@ -44,6 +44,8 @@ export default function Contact() {
       default:
         return;
     }
+    dispatch(contactActions.reset());
+
     setTimeout(() => {
       setLoadingState(0);
     }, 1750);
