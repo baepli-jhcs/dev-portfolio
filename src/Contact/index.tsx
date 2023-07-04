@@ -71,10 +71,10 @@ export default function Contact() {
             questions or concerns, feel free to message me below or at my email
             (
             <a
-              href="mailto:benaepli@gmail.com"
+              href="mailto:ben@aepli.tech"
               className={ContactCSS["email-link"]}
             >
-              benaepli@gmail.com
+              ben@aepli.tech
             </a>
             ).
           </p>
