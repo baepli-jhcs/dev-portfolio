@@ -4,10 +4,15 @@ import AboutCSS from "./About.module.scss";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadActions } from "../store/slices/loadSlice";
+import { useWindowWidth } from "@react-hook/window-size";
 
 function About(props: { images: any }) {
   const dispatch = useDispatch();
   const { images } = props;
+
+  const width = useWindowWidth();
+  const imageLocation = width > 900 ? " to your left" : " above";
+
   return (
     <motion.div
       initial="initial"
@@ -31,15 +36,15 @@ function About(props: { images: any }) {
               <div className={AboutCSS.text}>
                 I am a senior at the Jackson Hole Community School, and I love
                 software development. These days, I primarily program graphics
-                applications with C++, and I plan to pursue this passion into
-                college and beyhond. For the past year, I've been working on a
+                applications with C++, and I plan to pursue this passion in
+                college and beyond. For the past year, I've been working on a
                 project known as EXAGE (visible on the projects tab). I also
                 have some skill in web development through the MERN stack, and I
-                am plenty experienced with Python and Java.
+                have plenty of experience with Python and Java.
                 <br />
                 <br />
                 On the side, I enjoy skiing, flying, and photography (the image
-                to your left is one of my photos of Wyoming wildlife!).
+                {imageLocation} is one of my photos of Wyoming wildlife!).
               </div>
             </div>
             <div className={AboutCSS.buttons}>
