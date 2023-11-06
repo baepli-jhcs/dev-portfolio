@@ -30,8 +30,8 @@ export default function Projects(props: { data: any }) {
       <div className={ProjectsCSS.inner}>
         <h1 className={ProjectsCSS.header}>Projects</h1>
         <p className={ProjectsCSS.description}>
-          Check out my latest projects! If you want to see more, my GitHub
-          profile at
+          NOTICE: these projects are heavily outdated! If you want to see my
+          latest, my GitHub profile at
           <a
             className={ProjectsCSS["profile-link"]}
             title="link"

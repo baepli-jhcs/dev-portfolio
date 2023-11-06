@@ -48,7 +48,7 @@ function Home(props: { images: any }) {
             variants={createSubtitleTransition(initialLoad, 0)}
             className={HomeCSS.subtitle}
           >
-            A student and software developer
+            A student and graphics programmer
           </motion.h3>
           <motion.div
             initial="initial"

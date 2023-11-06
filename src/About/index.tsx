@@ -34,11 +34,10 @@ function About(props: { images: any }) {
             <div className={AboutCSS.info}>
               <div className={AboutCSS.title}> About Me </div>
               <div className={AboutCSS.text}>
-                I am a senior at the Jackson Hole Community School, and I love
-                software development. These days, I primarily program graphics
-                applications with C++, and I plan to pursue this passion in
-                college and beyond. For the past year, I've been working on a
-                project known as EXAGE (visible on the projects tab). I also
+                I am a senior at the Jackson Hole Community School in Wyoming.
+                These days, I primarily program graphics applications with C++,
+                and I plan to pursue this passion in college and beyond. For the
+                past year, I've been working on a project known as EXAGE. I also
                 have some skill in web development through the MERN stack, and I
                 have plenty of experience with Python and Java.
                 <br />
